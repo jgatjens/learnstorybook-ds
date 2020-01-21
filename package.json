@@ -1,7 +1,12 @@
 {
-  "name": "learnstorybook-ds",
+  "name": "jgatjens-learnstorybook-ds",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "Learn Storybook DS",
+  "main": "dist/index.js",
+  "repository": "git@github.com:jgatjens/learnstorybook-ds.git",
+  "author": "Jairo Gatjens <jgatjens@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -14,13 +19,12 @@
     "styled-components": "^5.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "chromatic": "CHROMATIC_APP_CODE=agt1w0gmohr chromatic"
+    "build-storybook-docs": "build-storybook -s public --docs"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,14 +42,23 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@storybook/addon-a11y": "^5.3.8",
     "@storybook/addon-actions": "^5.3.7",
+    "@storybook/addon-docs": "^5.3.8",
     "@storybook/addon-knobs": "^5.3.8",
     "@storybook/addon-links": "^5.3.7",
     "@storybook/addon-storysource": "^5.3.7",
     "@storybook/addons": "^5.3.7",
     "@storybook/preset-create-react-app": "^1.5.2",
     "@storybook/react": "^5.3.7",
+    "auto": "^9.1.0",
     "prettier": "^1.19.1",
     "storybook-chromatic": "^3.4.1"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
   }
 }
